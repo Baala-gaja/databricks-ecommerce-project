@@ -3,92 +3,92 @@ End-to-end E-Commerce Data Pipeline using Databricks Lakehouse Architecture
 # Databricks E-Commerce Lakehouse Project
 
 ## Project Overview
-This project demonstrates the **Databricks Lakehouse Medallion Architecture** using an E-Commerce dataset.
 
-The pipeline processes raw sales data and transforms it into business insights using **Bronze, Silver, and Gold layers**.
+This project demonstrates an end-to-end data pipeline using the Databricks Lakehouse architecture and the Medallion (Bronze, Silver, Gold) pattern.
+
+The pipeline processes raw e-commerce transaction data and transforms it into business insights.
+
+---
 
 ## Dataset
+
 Online Retail Dataset
 
 Source:
 https://archive.ics.uci.edu/ml/datasets/online+retail
 
-Note:
-Due to GitHub size limits, a sample dataset is included.
+Note: Due to GitHub file size limits, a sample dataset is included.
 
 ---
 
 ## Architecture
 
-Bronze Layer → Raw data ingestion  
-Silver Layer → Cleaned and filtered data  
-Gold Layer → Business analytics tables
+Medallion Architecture:
+
+Raw Data
+   ↓
+Bronze Layer (Raw Delta Table)
+   ↓
+Silver Layer (Cleaned Data)
+   ↓
+Gold Layer (Business Analytics)
 
 ---
 
 ## Pipeline
 
 ### Bronze Layer
-Raw dataset stored as Delta table.
+Raw dataset ingested into Delta Lake.
 
 Table:
-
-**bronze_online_retail**
-
+bronze_online_retail
 
 ---
 
 ### Silver Layer
 Data cleaning operations performed:
 
-• Remove cancelled orders  
-• Remove null customer IDs
+• Removed cancelled orders  
+• Removed null CustomerID values
 
 Table:
-
-**silver_online_retail**
-
+silver_online_retail
 
 ---
 
 ### Gold Layer
-Business analytics generated:
-
-• Country-wise revenue  
-• Top selling products
+Business analytics tables generated.
 
 Tables:
-
-**gold_country_sales
-gold_top_products**
-
+gold_country_sales
 
 ---
 
 ## Technologies Used
 
-- Databricks
-- PySpark
-- Delta Lake
-- GitHub
+Databricks  
+PySpark  
+Delta Lake  
+GitHub  
 
 ---
 
 ## Sample Insights
 
 Top Revenue Countries:
-- Germany
-- France
-- Japan
+
+Germany  
+France  
+Japan  
 
 Top Products:
-- WORLD WAR 2 GLIDERS ASSTD DESIGNS
-- CREAM HEART CARD HOLDER
-- BLACK HEART CARD HOLDER
+
+WORLD WAR 2 GLIDERS ASSTD DESIGNS  
+CREAM HEART CARD HOLDER  
+BLACK HEART CARD HOLDER  
 
 ---
 
 ## Lakehouse Architecture
 
 Raw Data → Bronze → Silver → Gold
-
